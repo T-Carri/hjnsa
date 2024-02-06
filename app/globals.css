@@ -2,32 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto:ital@1&display=swap');
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+margin: 0;
+
+background-color: black;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+
+a{
+  color: rgb(240, 238, 233);
+  margin: 3%;
+  font-size: large;
+  
+}
+
+header{
+  width: 100%;
+  max-width: 100%;
+  margin: auto;
+  height: 110px;
+  position: relative;
+  z-index: 100;
+  background-color: black;
+}
+
+nav{
+
+width: 1140px;
+max-width: 80%;
+margin: auto;
+
+}
+.carousel{
+ 
+  position: relative;
+margin-top: -100px;
+  width: 100%;
+  height: 95vh;
+  filter:brightness(0.7);
+ overflow: hidden;
+}
+
+.content{
+  color: rgb(248, 247, 244);
+  position: absolute;
+  top:30%;
+  left: 10%;
+  font-family: 'Indie Flower', cursive;
+  font-family: 'Roboto', sans-serif;
+  z-index: 100;
+}
+
+h1{
+
+  color: rgb(240, 238, 233);
+  font-family: 'Indie Flower', cursive;
+  font-family: 'Roboto', sans-serif;
+}
+
+.main{
+height: 70vh;
+  display: block;
+  margin-bottom: 17em;
 }
