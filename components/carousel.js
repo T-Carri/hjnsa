@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useState } from "react";
 import {
   BsFillArrowRightCircleFill,
@@ -25,7 +26,7 @@ export default function Carousel({ slides }) {
         }}
       >
         {slides.map((s) => {
-          return <img  alt={s} src={s} />;
+          return <Image key={s}  alt={s} src={s} width={200} height={100} />;
         })}
       </div>
 
@@ -45,7 +46,7 @@ export default function Carousel({ slides }) {
               onClick={() => {
                 setCurrent(i);
               }}
-              key={"circle" + i}
+              key={ i}
               className={`rounded-full w-5 h-5 cursor-pointer  ${
                 i == current ? "bg-white" : "bg-gray-500"
               }`}
