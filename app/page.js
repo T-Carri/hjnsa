@@ -1,9 +1,11 @@
 'use client'
 import Image from "next/image";
 import { useRef } from "react";
-
+import Carousel from "@/components/carousel";
+import emailjs from '@emailjs/browser';
+import ChatWidget from '@/components/ChatWidget'
 export default function Home() {
-  
+  const form = useRef();
   const contactoRef = useRef(null);
 
   const scrollToContacto = () => {
@@ -24,6 +26,43 @@ export default function Home() {
   };
 
 
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_zntp8xm', 'template_34e5qhe', form.current, {
+        publicKey: 'XD5yABx5Ec7h_6uq7',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
+
+
+      form.current.reset();
+  };
+
+
+  let slides = [
+    "/c4.jpg",
+    "/c5.jpg",
+    "/c6.jpg",
+    "https://i.pinimg.com/originals/51/82/ac/5182ac536727d576c78a9320ac62de30.jpg",
+    "/c1.jpg",
+    "https://wallpapercave.com/wp/wp3386769.jpg",
+    "/c2.jpg",
+    "https://wallpaperaccess.com/full/809523.jpg",
+    "/c3.jpg",
+    "https://getwallpapers.com/wallpaper/full/5/c/0/606489.jpg",
+    
+  ];
+
+
+
   return (
 <>
 <div className="main">
@@ -38,15 +77,18 @@ export default function Home() {
         <a>INICIO</a>
 
           </div>
-          <div onClick={scrollToAboutus} style={{ marginLeft: '50px' }}>
+          <div onClick={scrollToAboutus} style={{ marginLeft: '40px' }}>
         <a>SOBRE NOSOTROS</a>
 
           </div>
-          <div style={{ marginLeft: '50px' }} onClick={scrollToContacto}>
+          <div style={{ marginLeft: '20px' }} onClick={scrollToContacto}>
         <a>CONTACTO</a>
 
           </div>
+          <div style={{ marginLeft: '50px' }} >
+        <a href="/politicas">POLITICAS</a>
 
+          </div>
         </div>
         
       </nav>
@@ -424,8 +466,42 @@ Limpieza vía química (para decapar, desoxidar, pasivar, desincrustar, sanitiza
 
 </div>
 
+<div className="bg-black py-24 sm:py-32 mt-200">
+    <div className="max-w-md mx-auto text-white">
+        <h4 className="text-3xl font-bold mb-6">Déjanos tus datos, nosotros te contactamos</h4>
 
+        <form  ref={form} onSubmit={sendEmail}>
+            <div className="mb-4">
+                <label htmlFor="nombre" className="block text-sm font-medium">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" className="mt-1 p-2 w-full border rounded focus:outline-none focus:ring focus:border-blue-300 text-black" />
+            </div>
 
+            <div className="mb-4">
+                <label htmlFor="correo" className="block text-sm font-medium">Correo:</label>
+                <input type="email" id="correo" name="correo" className="mt-1 p-2 w-full border rounded focus:outline-none focus:ring focus:border-blue-300 text-black" />
+            </div>
+
+            <div className="mb-4">
+                <label htmlFor="telefono" className="block text-sm font-medium">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" className="mt-1 p-2 w-full border rounded focus:outline-none focus:ring focus:border-blue-300 text-black" />
+            </div>
+
+            <div className="mb-4">
+                <label htmlFor="servicios" className="block text-sm font-medium">Servicios de interés:</label>
+                <input type="tel" id="servicio" name="servicio" className="mt-1 p-2 w-full border rounded focus:outline-none focus:ring focus:border-blue-300 text-black" />
+
+            </div>
+
+            <div className="mt-6">
+                <button type="submit" className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300">Enviar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div className="w-[60%] m-auto pt-11">
+      <Carousel slides={slides} />
+    </div>
 
 <footer ref={contactoRef} style={{ height: '40em', backgroundColor: 'black', padding: '4%' }}>
   <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', height: '50%' }}>
@@ -442,11 +518,14 @@ Limpieza vía química (para decapar, desoxidar, pasivar, desincrustar, sanitiza
       <p>Correo Electrónico 2: <strong>hidroserviciosindustriales@hotmail.com</strong></p>
       <p>Correo Electrónico 3: <strong>osollo@hotmail.com</strong></p>
       {/* Puedes agregar más detalles según tus necesidades */}
+<img src="/qr.PNG" alt="qr" />
+
+
     </div>
   </div>
 </footer>
 
-
+<ChatWidget/>
 
 
 
