@@ -4,6 +4,8 @@ import { useRef } from "react";
 import Carousel from "@/components/carousel";
 import emailjs from '@emailjs/browser';
 import ChatWidget from '@/components/ChatWidget'
+import { FaXTwitter, FaTiktok, FaInstagram, FaSnapchat, FaYoutube  } from "react-icons/fa6";
+
 export default function Home() {
   const form = useRef();
   const contactoRef = useRef(null);
@@ -51,13 +53,13 @@ export default function Home() {
     "/c4.jpg",
     "/c5.jpg",
     "/c6.jpg",
-    "https://i.pinimg.com/originals/51/82/ac/5182ac536727d576c78a9320ac62de30.jpg",
+    
     "/c1.jpg",
-    "https://wallpapercave.com/wp/wp3386769.jpg",
+    
     "/c2.jpg",
-    "https://wallpaperaccess.com/full/809523.jpg",
-    "/c3.jpg",
-    "https://getwallpapers.com/wallpaper/full/5/c/0/606489.jpg",
+    
+    "/c3.jpg"
+    
     
   ];
 
@@ -73,6 +75,9 @@ export default function Home() {
         <div className='relative w-24 h-24  mx-3 rounded-xl overflow-hidden '>
           <Image src="/hjnsa.png" alt="Descripción de la imagen" fill={true} />
         </div>
+
+para web
+
           <div style={{ marginLeft: '50px' }}>
         <a>INICIO</a>
 
@@ -412,13 +417,13 @@ Limpieza vía química (para decapar, desoxidar, pasivar, desincrustar, sanitiza
   <div className="mx-auto max-w-7xl px-6 lg:px-8">
     <div className="mx-auto max-w-2xl lg:mx-0">
       <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Nuestra experiencia</h2>
-      <p className="mt-2 text-lg leading-8 text-gray-600">NUESTRO PERSONAL CUENTA CON AMPLIA EXPERIENCIA EN SERVICIOS EJECUTADOS EN INDUSTRIAS COMO: </p>
+      <p className="mt-2 text-lg leading-8 text-gray-600">Nuestro personal cuenta con amplia experiencia en servicios ejecutados en industrias como: </p>
     </div>
     <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
       <article className="flex max-w-xl flex-col items-start justify-between">
         <div className="flex items-center gap-x-4 text-xs">
          
-          <a  className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"> DESCAUCHE O DESCONTAMINACIÓN DE PISTA DE AEROPUERTOS</a>
+          <a  className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"> Descauche o descontaminación de pista de aeropuertos</a>
         </div>
         <div className="group relative">
          
@@ -433,12 +438,18 @@ Limpieza vía química (para decapar, desoxidar, pasivar, desincrustar, sanitiza
       <article className="flex max-w-xl flex-col items-start justify-between">
         <div className="flex items-center gap-x-4 text-xs">
          
-          <a  className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">LIMPIEZA MECANICA E HIDRODINAMICA DE TANQUES CISTERNAS Y DRENAJES 
+          <a  className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Limpieza mecánica e hidrodinámica de tanques cisternas y drenajes
+
+
+
+
+
+
             </a>
         </div>
         <div className="group relative">
          
-          <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">LIMPIEZA VIA QUÍMICA PARA DESENGRASAR, DESOXIDAR, DESINCRUSTAR, DECAPAR, PASIVAR, DESCARBONIZAR, FOSFATIZAR, SANITIZAR.
+          <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">Limpieza vía química para desengrasar, desoxidar, desincrustar, decapar, pasivar, descarbonizar, fosfatizar, sanitizar.
             </p>
         </div>
         <div className="relative mt-8 flex items-center gap-x-4">
@@ -449,7 +460,7 @@ Limpieza vía química (para decapar, desoxidar, pasivar, desincrustar, sanitiza
       <article className="flex max-w-xl flex-col items-start justify-between">
         <div className="flex items-center gap-x-4 text-xs">
          
-          <a  className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"> LIMPIEZA HIDRODINAMICA POR MEDIO DE AGUA A ALTA PRESION</a>
+          <a  className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"> Limpieza hidrodinámica por medio de agua a alta presión.</a>
         </div>
         <div className="group relative">
          
@@ -499,31 +510,97 @@ Limpieza vía química (para decapar, desoxidar, pasivar, desincrustar, sanitiza
     </div>
 </div>
 
-<div className="w-[60%] m-auto pt-11">
-      <Carousel slides={slides} />
-    </div>
 
-<footer ref={contactoRef} style={{ height: '40em', backgroundColor: 'black', padding: '4%' }}>
-  <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', height: '50%' }}>
-    <div style={{ flex: '1' }}> 
-      <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3758.4291758635177!2d-99.32114218954446!3d19.608941281632163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1ses-419!2smx!4v1707144920768!5m2!1ses-419!2smx" width="600" height="450" style={{ border: '0' }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+<div className="bg-white py-24 sm:py-32 mt-200 flex">
+
+  <div className="w-1/2 p-6">
+  <video width="80%" height="auto" className="mx-auto" controls >
+    <source src="/video.mp4" type="video/mp4"/>
+    Tu navegador no soporta el elemento de video.
+  </video>
+  </div>
+
+  <div className="w-1/2 p-4 flex flex-col items-center justify-center">
+    
+    <img src="/hjnsa.png" alt="Imagen en forma de círculo" className="w-16 h-16 rounded-full mb-4"/>
+
+   
+    <audio controls>
+      <source src="/audio.mp4" type="audio/mp4"/>
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+  </div>
+
+</div>
+
+ <div className="w-[60%] m-auto pt-11">
+      <Carousel slides={slides} />
+    </div> 
+<footer ref={contactoRef} className="lg:h-50em bg-black p-4">
+  <div className="flex flex-col lg:flex-row lg:justify-between h-full">
+    <div className="lg:w-1/2 mb-4 lg:mb-0">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3758.4291758635177!2d-99.32114218954446!3d19.608941281632163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1ses-419!2smx!4v1707144920768!5m2!1ses-419!2smx"
+        width="100%" height="450" style={{ border: '0' }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
     </div>
-    <div style={{ flex: '1', color: 'white' }}>
-      <h2 style={{ fontSize: '2em', marginBottom: '1em' }}>Información de Contacto</h2>
+    <div className="lg:w-1/2 text-white p-7">
+      <h2 className="text-2xl mb-2">Información de Contacto</h2>
       <p>¡Gracias por visitarnos! Aquí encontrarás información de contacto para nuestro servicio.</p>
-      <p> Para mayor información y cotizaciones comunicarse al: </p>
-      <p>Dirección: <strong>CDA DE LAS ROSAS 1 A2, VICENTE GUERRERO 1A. SECCION, 54425 Ciudad Nicolas Romero, México</strong></p>
-      <p>Teléfono: <strong>015558234064, 5510474256 Sucursal Mérida: 9992069855</strong></p>
-      <p>Correo Electrónico: <strong>hidroserviciosindustriales@hinsa.mx</strong></p>
-      <p>Correo Electrónico 2: <strong>hidroserviciosindustriales@hotmail.com</strong></p>
-      <p>Correo Electrónico 3: <strong>osollo@hotmail.com</strong></p>
-      {/* Puedes agregar más detalles según tus necesidades */}
-<img src="/qr.PNG" alt="qr" />
+      <p>Para mayor información y cotizaciones comunicarse al:</p>
+      <p><strong>Dirección:</strong> CDA DE LAS ROSAS 1 A2, VICENTE GUERRERO 1A. SECCION, 54425 Ciudad Nicolas Romero, México</p>
+      <p><strong>Teléfono:</strong> 015558234064, 5510474256 Sucursal Mérida: 9992069855</p>
+      <p><strong>Correo Electrónico:</strong> hidroserviciosindustriales@hinsa.mx</p>
+      <p><strong>Correo Electrónico 2:</strong> hidroserviciosindustriales@hotmail.com</p>
+      <p><strong>Correo Electrónico 3:</strong> osollo@hotmail.com</p>
+
+
+      <div class="flex p-4 justify-center items-center">
+    <div class="m-auto text-2xl">
+    <a href="https://twitter.com/hjnsa88217">
+<FaXTwitter />
+
+      </a>
+    </div>
+    <div class="m-auto text-2xl">
+      <a href="https://www.tiktok.com/@hidroservicios.in?_t=8kCwjb6UQAY&_r=1">
+
+<FaTiktok />
+      </a>
+      
+    </div>
+    <div class="m-auto text-2xl">
+    <a href="https://youtube.com/@user-xf8kd3ns2l?si=E_PZmoxAPOqHYEHY">
+
+<FaYoutube />
+    </a>
+    </div>
+    <div class="m-auto text-2xl">
+    <a href="https://www.instagram.com/servicios.hjsa?igsh=cDg4amczNGhvbTQz">
+         <FaInstagram/>
+
+    </a>
+    </div>
+    <div class="m-auto text-2xl">
+    <a href=" https://www.snapchat.com/add/hidroservicios">
+
+       <FaSnapchat/>
+    </a>
+    </div>
+  </div>
+
 
 
     </div>
   </div>
+  <div className="w-full">
+    <div className="mx-auto justify-center w-full"> {/* Añadir la clase w-full aquí */}
+      <img src="/qr.PNG" alt="qr" className="mt-4 lg:mt-4 mx-auto" />
+    </div>
+  </div>
+
 </footer>
+
 
 <ChatWidget/>
 
