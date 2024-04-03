@@ -1,14 +1,36 @@
 'use client'
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, useState, Fragment  } from "react";
 import Carousel from "@/components/carousel";
 import emailjs from '@emailjs/browser';
 import ChatWidget from '@/components/ChatWidget'
 import { FaXTwitter, FaTiktok, FaInstagram, FaSnapchat, FaYoutube  } from "react-icons/fa6";
+import { Popover, Transition } from '@headlessui/react'
+import { ChevronDownIcon, PhoneIcon, PlayCircleIcon} from '@heroicons/react/20/solid'
+import {
+Bars3Icon,
+  HomeModernIcon,
+  NewspaperIcon,
+  CheckBadgeIcon,
+  ChatBubbleBottomCenterTextIcon,
+  ScaleIcon
+} from '@heroicons/react/24/outline'
 
+
+
+
+const callsToAction = [
+  { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
+  { name: 'Contact sales', href: '#', icon: PhoneIcon },
+]
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false);
   const form = useRef();
   const contactoRef = useRef(null);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   const scrollToContacto = () => {
     contactoRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -27,6 +49,14 @@ export default function Home() {
     portafolioRef.current.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const scrollToPolitic = () => {
+    console.log('for politic')
+  };
+
+
+  const scrollToblog = () => {
+    console.log('for politic')
+  };
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -65,48 +95,113 @@ export default function Home() {
 
 
 
+
+
+
+
+  const solutions = [
+    { 
+      name: 'Sobre nosotros', 
+      description: 'Encuentra más información acerca de nosotros', 
+       // Aquí asigna la función directamente, sin comillas
+      onClick: scrollToAboutus, // Aquí asigna la función directamente, sin comillas
+
+      href: '#', 
+      icon: HomeModernIcon 
+    },
+    { 
+      name: 'Políticas', 
+      description: 'Políticas de la empresa', 
+      onClick: scrollToPolitic,
+      href: '/politicas', 
+      icon: ScaleIcon 
+    },
+    { 
+      name: 'Blog', 
+      description: "Revisa nuestro blog", 
+      href: '#', 
+      onClick: scrollToblog,
+      icon: NewspaperIcon 
+    },
+    { 
+      name: 'Contacto', 
+      description: '¡Contáctanos!', 
+      href: '#', 
+      onClick: scrollToContacto, // Aquí asigna la función directamente, sin comillas
+      icon: ChatBubbleBottomCenterTextIcon 
+    }
+  ];
+
   return (
 <>
-<div className="main">
+<div className="main relative">
 <header>
-      <nav >
-
-        <div className="mt-3"  style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '20px' }}>
-        <div className='relative w-24 h-24  mx-3 rounded-xl overflow-hidden '>
+<nav>
+      <div className="mt-3 flex flex-row items-center justify-between">
+        <div className="relative w-24 h-24 mx-3 rounded-xl overflow-hidden">
           <Image src="/hjnsa.png" alt="Descripción de la imagen" fill={true} />
         </div>
-
-para web
-
-          <div style={{ marginLeft: '50px' }}>
-        <a>INICIO</a>
-
-          </div>
-          <div onClick={scrollToAboutus} style={{ marginLeft: '40px' }}>
-        <a>SOBRE NOSOTROS</a>
-
-          </div>
-          <div style={{ marginLeft: '20px' }} onClick={scrollToContacto}>
-        <a>CONTACTO</a>
-
-          </div>
-          <div style={{ marginLeft: '50px' }} >
-        <a href="/politicas">POLITICAS</a>
-
-          </div>
+        <div className="block">
+          <Popover className="relative">
+            <Popover.Button className="inline-flex items-center gap-x-1 text-sm font-semibold leading-6 text-white">
+              <Bars3Icon className="h-10 w-10" aria-hidden="true" />
+            </Popover.Button>
+            
+            <Transition
+              as={Fragment}
+              enter="transition ease-out duration-200"
+              enterFrom="opacity-0 translate-y-1"
+              enterTo="opacity-100 translate-y-0"
+              leave="transition ease-in duration-150"
+              leaveFrom="opacity-100 translate-y-0"
+              leaveTo="opacity-0 translate-y-1"
+            >
+              <Popover.Panel className="absolute z-10 mt-1 top-full right-0 w-screen max-w-md hidden md:block">
+                <div className="flex flex-col overflow-hidden rounded-3xl bg-white text-sm leading-6 shadow-lg ring-1 ring-gray-900/5">
+                  <div className="p-4">
+                    {solutions.map((item) => (
+                      <div key={item.name} className="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50">
+                        <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                          <item.icon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
+                        </div>
+                        <div>
+                          <a onClick={item.onClick}  href={item.href} className="font-semibold text-gray-900">
+                            {item.name}
+                            <span className="absolute inset-0" />
+                          </a>
+                          <p className="mt-1 text-gray-600">{item.description}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
+                    {callsToAction.map((item) => (
+                      <a
+                        key={item.name}
+                        href={item.href}
+                        className="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-100"
+                      >
+                        <item.icon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
+                        {item.name}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </Popover.Panel>
+            </Transition>
+          </Popover>
         </div>
-        
-      </nav>
-    </header>
+      </div>
+    </nav>   </header>
 
 <div className="carousel relative mb-50"  >
-<Image alt="carouseli" className="overflow-hidden" src="/hero.jpg"  fill={true} />
+<Image alt="carouseli" className="overflow-hidden" src="https://images.unsplash.com/photo-1638555063519-d009e6f3b28b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  fill={true} />
 
 <div className="content">
 <div className=" max-w-7xl px-6 lg:px-8">
     <div className=" max-w-2xl lg:mx-0">
-      <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">Hidroservicios Industriales, S.A. de C.V.</h2>
-      <p className="mt-6 text-lg leading-8 text-gray-300">Con más de 15 años de experiencia, se destaca en el mercado por ofrecer soluciones eficientes y sostenibles para el mantenimiento y la limpieza de pistas de aterrizaje, priorizando la seguridad y operatividad aeroportuaria.</p>
+      <h2 className="text-4xl font-bold tracking-tight text-gray-300 sm:text-6xl"><strong> Hidroservicios Industriales, S.A. de C.V. </strong></h2>
+       <p className="mt-6 text-lg leading-8 text-white"><strong>Con más de 15 años de experiencia, se destaca en el mercado por ofrecer soluciones eficientes y sostenibles para el mantenimiento y la limpieza de pistas de aterrizaje, priorizando la seguridad y operatividad aeroportuaria.</strong></p>
     </div>
     <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
       <div className="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
@@ -511,21 +606,20 @@ Limpieza vía química (para decapar, desoxidar, pasivar, desincrustar, sanitiza
 </div>
 
 
-<div className="bg-white py-24 sm:py-32 mt-200 flex">
+<div className="bg-white py-24 sm:py-32 mt-20 flex flex-col sm:flex-row">
 
-  <div className="w-1/2 p-6">
-  <video width="80%" height="auto" className="mx-auto" controls >
-    <source src="/video.mp4" type="video/mp4"/>
-    Tu navegador no soporta el elemento de video.
-  </video>
+<div className="w-full sm:w-1/2 p-6">
+    <video width="80%" height="auto" className="mx-auto" controls>
+      <source src="/video.mp4" type="video/mp4"/>
+      Tu navegador no soporta el elemento de video.
+    </video>
   </div>
 
-  <div className="w-1/2 p-4 flex flex-col items-center justify-center">
+  <div className="w-full sm:w-1/2 p-4 flex flex-col items-center justify-center">
     
     <img src="/hjnsa.png" alt="Imagen en forma de círculo" className="w-16 h-16 rounded-full mb-4"/>
 
-   
-    <audio controls>
+    <audio className="w-full" controls>
       <source src="/audio.mp4" type="audio/mp4"/>
       Tu navegador no soporta el elemento de audio.
     </audio>
@@ -609,10 +703,5 @@ Limpieza vía química (para decapar, desoxidar, pasivar, desincrustar, sanitiza
 
 </>    
 
-
-
-
-
-
-  );
+ );
 }
