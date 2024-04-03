@@ -4,7 +4,7 @@ import { useRef, useState, Fragment  } from "react";
 import Carousel from "@/components/carousel";
 import emailjs from '@emailjs/browser';
 import ChatWidget from '@/components/ChatWidget'
-import { FaXTwitter, FaTiktok, FaInstagram, FaSnapchat, FaYoutube  } from "react-icons/fa6";
+import { FaXTwitter, FaInstagram, FaLinkedin   } from "react-icons/fa6";
 import { Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon} from '@heroicons/react/20/solid'
 import {
@@ -156,7 +156,7 @@ export default function Home() {
               leaveFrom="opacity-100 translate-y-0"
               leaveTo="opacity-0 translate-y-1"
             >
-              <Popover.Panel className="absolute z-10 mt-1 top-full right-0 w-screen max-w-md hidden md:block">
+              <Popover.Panel className="absolute z-10 mt-1 top-full right-0 w-screen max-w-md">
                 <div className="flex flex-col overflow-hidden rounded-3xl bg-white text-sm leading-6 shadow-lg ring-1 ring-gray-900/5">
                   <div className="p-4">
                     {solutions.map((item) => (
@@ -174,7 +174,7 @@ export default function Home() {
                       </div>
                     ))}
                   </div>
-                  <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
+                  {/* <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
                     {callsToAction.map((item) => (
                       <a
                         key={item.name}
@@ -185,7 +185,7 @@ export default function Home() {
                         {item.name}
                       </a>
                     ))}
-                  </div>
+                  </div> */}
                 </div>
               </Popover.Panel>
             </Transition>
@@ -656,29 +656,20 @@ Limpieza vía química (para decapar, desoxidar, pasivar, desincrustar, sanitiza
 
       </a>
     </div>
-    <div class="m-auto text-2xl">
-      <a href="https://www.tiktok.com/@hidroservicios.in?_t=8kCwjb6UQAY&_r=1">
+  
 
-<FaTiktok />
-      </a>
-      
-    </div>
-    <div class="m-auto text-2xl">
-    <a href="https://youtube.com/@user-xf8kd3ns2l?si=E_PZmoxAPOqHYEHY">
-
-<FaYoutube />
-    </a>
-    </div>
     <div class="m-auto text-2xl">
     <a href="https://www.instagram.com/servicios.hjsa?igsh=cDg4amczNGhvbTQz">
          <FaInstagram/>
 
     </a>
     </div>
-    <div class="m-auto text-2xl">
-    <a href=" https://www.snapchat.com/add/hidroservicios">
+   
 
-       <FaSnapchat/>
+    <div class="m-auto text-2xl">
+    <a href="https://www.linkedin.com/company/hidroservicios-industriales-s-a-de-c-v/?viewAsMember=true">
+         <FaLinkedin/>
+
     </a>
     </div>
   </div>
