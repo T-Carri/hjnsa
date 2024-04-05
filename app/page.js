@@ -80,8 +80,12 @@ export default function Home() {
 
 
   let slides = [
+    "https://images.unsplash.com/photo-1503412639354-4fc4ac293517?q=80&w=1536&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "/c4.jpg",
+    "https://images.unsplash.com/photo-1516052016015-6c951fdad2d1?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "/c5.jpg",
+
+    "https://images.unsplash.com/photo-1503412345334-7d4ca6c34f61?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "/c6.jpg",
     
     "/c1.jpg",
@@ -119,7 +123,7 @@ export default function Home() {
     { 
       name: 'Blog', 
       description: "Revisa nuestro blog", 
-      href: '#', 
+      href: '/blog', 
       onClick: scrollToblog,
       icon: NewspaperIcon 
     },
@@ -255,7 +259,7 @@ export default function Home() {
               </svg>
 
 
-              <span><strong className="font-semibold text-gray-900">	AEROPUERTO DE BELICE</strong></span>
+              <span><strong className="font-semibold text-gray-900">	Aeropuerto de Belice</strong></span>
             </li>
 
             <li className="flex gap-x-3">
@@ -266,7 +270,7 @@ export default function Home() {
              </svg>
 
 
-             <span><strong className="font-semibold text-gray-900">	COMEX PLANTA TEPEXPAN </strong></span>
+             <span><strong className="font-semibold text-gray-900">	Comex planta Tepexpan</strong></span>
            </li>
 
 
@@ -278,18 +282,9 @@ export default function Home() {
              </svg>
 
 
-             <span><strong className="font-semibold text-gray-900">	FLOWSERVE PLANTA ECATEPEC </strong></span>
+             <span><strong className="font-semibold text-gray-900">	Flowserve Planta Ecatepec </strong></span>
            </li>
-           <li className="flex gap-x-3">
-             
-
-             <svg className="mt-1 h-5 w-5 flex-none text-indigo-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-            <path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/>
-             </svg>
-
-
-             <span><strong className="font-semibold text-gray-900">COMEX PLANTA TEPEXPAN </strong></span>
-           </li>
+       
 
 
            <li className="flex gap-x-3">
@@ -300,7 +295,7 @@ export default function Home() {
              </svg>
 
 
-             <span><strong className="font-semibold text-gray-900">AEROPUERTO QUERETARO, CANCÚN, PUEBLA, COZUMEL, MINATITLAN, VILLAHERMOSA, OAXACA, MERIDA </strong></span>
+             <span><strong className="font-semibold text-gray-900">Aeropuerto, Queretaro, Cancún, Puebla, Cozumel, Minatitlán, Villahermosa, Oaxaca, Mérida </strong></span>
            </li>
 
 
@@ -690,7 +685,9 @@ Limpieza vía química (para decapar, desoxidar, pasivar, desincrustar, sanitiza
 <ChatWidget/>
 
 
-
+<a href="https://wa.me/5215646766202" target="_blank" rel="noopener noreferrer">
+    <img src="/wa.png" alt="WhatsApp" class="whatsapp-logo w-20 h-20"/>
+  </a>
 
 </>    
 

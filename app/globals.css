@@ -187,4 +187,9 @@ height: 70vh;
   fill: var(--bg-color);
 }
   
-  
+.whatsapp-logo {
+  position: fixed;
+  bottom: 20px; /* Ajusta esta cantidad según tu preferencia */
+  right: 20px; /* Ajusta esta cantidad según tu preferencia */
+  z-index: 9999; /* Asegura que la imagen esté por encima de otros elementos */
+}
