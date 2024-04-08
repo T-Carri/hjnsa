@@ -4,7 +4,10 @@ import { useRef, useState, Fragment  } from "react";
 import Carousel from "@/components/carousel";
 import emailjs from '@emailjs/browser';
 import ChatWidget from '@/components/ChatWidget'
-import { FaXTwitter, FaInstagram, FaLinkedin   } from "react-icons/fa6";
+import { FaXTwitter, FaInstagram, FaLinkedin } from "react-icons/fa6";
+import { FaAddressCard } from "react-icons/fa";
+import { FaPhoneSquareAlt } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 import { Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon} from '@heroicons/react/20/solid'
 import {
@@ -247,8 +250,20 @@ export default function Home() {
     <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
       <div className="lg:pr-4">
         <div className="lg:max-w-lg">
-        <h4 className="mt-16 text-2xl font-bold tracking-tight text-red-600">HIDROSERVICIOS INDUSTRIALES, S.A DE C.V</h4>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Limpiezas quimicas e hidrodinamicas a todo tipo de equipo de proceso.</h2>
+        <div className="flex items-center">
+        <div>
+        <Image src="/hjnsa.png" alt="Descripción de la imagen" width={300} height={300} />
+
+        </div> 
+        <div>
+          
+        <h4 className="mt-5 text-2xl font-bold tracking-tight text-red-600">HIDROSERVICIOS INDUSTRIALES, S.A DE C.V</h4>
+        <hr className="border-red-600 my-2 w-30" />
+        <h4 className="mt-2 text-1xl font-bold tracking-tight text-gray-900">Limpiezas quimicas e hidrodinamicas a todo tipo de equipo de proceso.</h4>
+
+        </div> 
+
+       </div>  
           <p className="mt-6 text-xl leading-8 text-gray-700">Somos una empresa dedicada a la prestación de Servicios de Limpieza Pre operacional y de Mantenimiento, a equipo de proceso por medio de chorro de agua a alta presión (Hidroblast) y recirculación química, con más de 15 años de experiencia en nuestro ramo lo cual está garantizado para ofrecerte el mejor servicio con la calidad, lo cual no respaldan nuestros clientes: </p>
           <ul role="list" className="mt-8 space-y-7 text-gray-600">
             <li className="flex gap-x-3">
@@ -306,8 +321,11 @@ export default function Home() {
         </div>
       </div>
     </div>
-    <div className="-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
-      <img alt="heros" className="w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]" src="https://plus.unsplash.com/premium_photo-1661963072327-555bfc988fea?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" ></img>
+    <div className="-ml-12 -mt-12 p-5 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+    <video width="100%" height="auto" className="mx-auto" autoplay muted controls>
+  <source src="/video2.mp4" type="video/mp4"/>
+  Tu navegador no soporta el elemento de video.
+</video>
     </div>
     <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
       <div className="lg:pr-4">
@@ -615,7 +633,7 @@ Limpieza vía química (para decapar, desoxidar, pasivar, desincrustar, sanitiza
     <img src="/hjnsa.png" alt="Imagen en forma de círculo" className="w-16 h-16 rounded-full mb-4"/>
 
     <audio className="w-full" controls>
-      <source src="/audio.mp4" type="audio/mp4"/>
+      <source src="/audio2.mp4" type="audio/mp4"/>
       Tu navegador no soporta el elemento de audio.
     </audio>
   </div>
@@ -637,11 +655,11 @@ Limpieza vía química (para decapar, desoxidar, pasivar, desincrustar, sanitiza
       <h2 className="text-2xl mb-2">Información de Contacto</h2>
       <p>¡Gracias por visitarnos! Aquí encontrarás información de contacto para nuestro servicio.</p>
       <p>Para mayor información y cotizaciones comunicarse al:</p>
-      <p><strong>Dirección:</strong> CDA DE LAS ROSAS 1 A2, VICENTE GUERRERO 1A. SECCION, 54425 Ciudad Nicolas Romero, México</p>
-      <p><strong>Teléfono:</strong> 015558234064, 5510474256 Sucursal Mérida: 9992069855</p>
-      <p><strong>Correo Electrónico:</strong> hidroserviciosindustriales@hinsa.mx</p>
-      <p><strong>Correo Electrónico 2:</strong> hidroserviciosindustriales@hotmail.com</p>
-      <p><strong>Correo Electrónico 3:</strong> osollo@hotmail.com</p>
+      <p><strong><FaAddressCard /></strong> CDA DE LAS ROSAS 1 A2, VICENTE GUERRERO 1A. SECCION, 54425 Ciudad Nicolas Romero, México</p>
+      <p><strong><FaPhoneSquareAlt /></strong> 015558234064, 5510474256 Sucursal Mérida: 9992069855</p>
+      <p><strong><MdEmail /></strong> hidroserviciosindustriales@hinsa.mx</p>
+      <p><strong><MdEmail /></strong> hidroserviciosindustriales@hotmail.com</p>
+      <p><strong><MdEmail /></strong> hidroserviciosindustriales57@gmail.com test</p>
 
 
       <div class="flex p-4 justify-center items-center">
